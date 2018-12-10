@@ -131,7 +131,7 @@ def main(base_p, mask_p, sub_name):
         res_vol = np.zeros(mask.shape + (n_t,), dtype='<f4')
         res_vol[mask, :] = residuals.T
         res_img = nib.Nifti1Image(res_vol, affine=img.affine, header=img.header)
-        nib.save(res_img, out_img_p)
+        nib.save(res_img, str(out_img_p))
 
 
 if __name__ == "__main__":
